@@ -9,6 +9,7 @@ from dataclasses import dataclass
 
 import ollama
 import streamlit as st
+import streamlit.components.v1 as components
 
 MODEL = "qwen3:8b"
 CHUNK_WORDS = 220
@@ -142,6 +143,19 @@ with st.sidebar:
         st.rerun()
     st.divider()
     st.caption(f"Answer model: `{MODEL}`")
+
+with st.expander("How it works"):
+    st.write(
+        "Upload a college report and ask a question. The app finds the most relevant report "
+        "sections locally, then asks Gemma to answer using those sections only."
+    )
+    components.html(
+        '''<iframe width="100%" height="360" src="https://www.youtube.com/embed/qt1IcDaCbO0"
+        title="rag sample Godly K Mathews" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>''',
+        height=370,
+    )
 
 if not st.session_state.chunks:
     st.info("Upload a college report in the sidebar to begin.")
