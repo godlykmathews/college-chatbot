@@ -1,4 +1,6 @@
-# College Report Chatbot
+# College Chatbot
+
+### Mulearn AI Chatbot task - #cl-ai-chatbot
 
 A local chatbot for asking focused questions about a college report: departments, programmes, staff roles, and other information in the supplied document. It runs entirely on your computer and generates answers with the Ollama model `gemma4:12b`.
 
